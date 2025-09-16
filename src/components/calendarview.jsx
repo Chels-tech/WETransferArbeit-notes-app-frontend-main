@@ -16,7 +16,7 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-const API = "http://localhost:3000/api/events";
+const API = "https://calendar-backend-4ibq.onrender.com/";
 
 export default function CalendarView() {
   const [events, setEvents] = useState([]);

@@ -1,5 +1,5 @@
 // src/services/eventsApi.js
-const API_URL = "http://localhost:3000/api/events";
+const API_URL = "https://calendar-backend-4ibq.onrender.com";
 
 async function parseJsonSafe(res) {
   const text = await res.text();

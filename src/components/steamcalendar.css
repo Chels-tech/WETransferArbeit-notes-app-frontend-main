@@ -1,0 +1,156 @@
+/* steamCalendar.css - Steam-inspired styling and namespaced modal classes */
+
+/* Page */
+.steam-page {
+  background: linear-gradient(180deg,#151a21 0%, #1b2838 100%);
+  min-height: 100vh;
+  color: #c7d5e0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 24px;
+}
+
+/* Header */
+.steam-header {
+  background: #0f151a;
+  padding: 18px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 18px;
+}
+.steam-header h1 {
+  margin: 0;
+  color: #66c0f4;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
+}
+
+/* Calendar card */
+.steam-calendar-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #22384a;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1; /* ensure below modal */
+}
+
+/* make the calendar fill card */
+.steam-calendar-card .rbc-calendar {
+  background: transparent;
+}
+
+/* toolbar button styling (ensures they are clickable) */
+.rbc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.rbc-toolbar button {
+  cursor: pointer;
+  pointer-events: auto;
+  background: rgba(0,0,0,0.2);
+  color: #c7d5e0;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.rbc-toolbar button:hover {
+  background: rgba(102,192,244,0.12);
+  color: #eaf6ff;
+}
+
+/* today's column highlight */
+.rbc-today {
+  background-color: rgba(102,192,244,0.06) !important;
+}
+
+/* event styling */
+.rbc-event {
+  background-color: #dd3047 !important;
+  color: #071627 !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-weight: 600;
+  border: none !important;
+}
+
+/* namespaced modal - avoids collisions with other global styles */
+.calendar-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4,6,8,0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.calendar-modal {
+  background: linear-gradient(180deg, #163540, #1f4256);
+  color: #c7d5e0;
+  border-radius: 10px;
+  padding: 18px;
+  width: 420px;
+  max-width: 94%;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  font-size: 14px;
+}
+
+.calendar-modal-title {
+  margin: 0 0 10px 0;
+  color: #bfe9ff;
+  font-weight: 700;
+}
+
+.calendar-field {
+  display: block;
+  margin-bottom: 10px;
+}
+.calendar-field-label {
+  font-size: 12px;
+  color: #a7cde6;
+  margin-bottom: 6px;
+}
+.calendar-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(102,192,244,0.12);
+  background: rgba(0,0,0,0.1);
+  color: #eaf6ff;
+  box-sizing: border-box;
+}
+
+/* modal actions */
+.calendar-modal-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.calendar-btn {
+  background: transparent;
+  color: #c7d5e0;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.calendar-btn.primary {
+  background: #66c0f4;
+  color: #071627;
+  border: none;
+}
+.calendar-btn.danger {
+  background: transparent;
+  color: #ff9a9a;
+  border: 1px solid rgba(255,80,80,0.22);
+}
+.calendar-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
